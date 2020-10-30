@@ -1,0 +1,33 @@
+function include_header(){document.getElementById("head").innerHTML =
+    "<div id=\"header_style\">"
+    + "<img src=\"SAJlogo.png\" id=\"logo\" alt=\"SAJ Logo\">"
+    +"<div class=\"search_box\">"
+    +"<input type=\"text\" placeholder=\"Search\" name=\"search\">"
+    +"<button type=\"submit\">"
+    +"<img src=\"search.svg\" alt=\"Search\">"
+    +" </button>"
+    +"</div>"
+
+    +"<div class=\"nav_menu\">"
+    +"<ul>"
+    +"<li><a href=\"construction.html\"><b> Products</b></a></li>"
+    +"<li><a href=\"construction.html\"><img src=\"shopping_cart.svg\" alt=\"Shopping cart\"><b>Cart</b></a></li>"
+    +"<li><a href=\"construction.html\"><img src=\"account_profile.svg\" alt=\"Profile\"><b>Login</b></a></li>"
+    +"<li><a href=\"contact.html\"><b>About</b><img src=\"dropdown_arrow.svg\" alt=\"Dropdown\"></a>"
+    +"<ul>"
+    +"<li><a href=\"construction.html\"><b>Contact Us</b></a></li>"
+    +"</ul>"
+    +"</li>"
+    +" </ul>"
+    +"</div>"
+    +"</div>"}
+
+function include_footer(){document.getElementById("foot").innerHTML =
+    "<footer>"
+    +"<p id=\"copy\">Copyright &copy; 2020 SAJ. All rights reserved.</p>"
+    +"</footer>"}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    include_header();
+    include_footer();
+});

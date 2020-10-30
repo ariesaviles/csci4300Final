@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#header_style{
+    background: navy;
+}
+
+#logo{
+    display: block;
+    width: 125px;
+    height: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+.search_box{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+}
+
+.search_box input{
+    width: 50%;
+    height: 22px;
+    padding: 3px;
+}
+
+.search_box button{
+    background-color: white;
+    height: 30px;
+    vertical-align: bottom;
+}
+.nav_menu{
+    width: 100%;
+    display: inline-block;
+    border-top: 1px solid lightsteelblue;
+}
+
+.nav_menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav_menu a:hover{text-decoration: underline;}
+.nav_menu li{
+    float: left;
+    width: 25%;
+    position: relative;
+}
+.nav_menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 105%;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    background-color: navy;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.nav_menu ul ul li{float: none;font-size: 94%; width: 100%}
+.nav_menu ul ul{display: none; position:absolute;
+    background-color: navy; width: 100%}
+.nav_menu ul li:hover > ul{display: block;}
+
+.nav_menu img{
+    vertical-align: top;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+#header_style::after{clear: both;}
+#dummy_content{height:370px;}
+
+#copy{text-align: center; color:white;font-size: 82%;}
+
+footer{
+    clear: both;
+    border: 2px solid navy;
+    background-color: navy;
+}
