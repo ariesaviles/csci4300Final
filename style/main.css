@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#header_style{
+    background: navy;
+}
+
+#logo{
+    display: block;
+    width: 125px;
+    height: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+.search_box{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+}
+
+.search_box input{
+    width: 50%;
+    height: 22px;
+    padding: 3px;
+}
+
+.search_box button{
+    background-color: white;
+    height: 30px;
+    vertical-align: bottom;
+}
+.nav_menu{
+    width: 100%;
+    display: inline-block;
+    border-top: 1px solid lightsteelblue;
+}
+
+.nav_menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav_menu a:hover{text-decoration: underline;}
+.nav_menu li{
+    float: left;
+    width: 25%;
+    position: relative;
+}
+.nav_menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 105%;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    background-color: navy;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.nav_menu ul ul li{float: none;font-size: 94%; width: 100%}
+.nav_menu ul ul{display: none; position:absolute;
+    background-color: navy; width: 100%}
+.nav_menu ul li:hover > ul{display: block;}
+
+.nav_menu img{
+    vertical-align: top;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+#header_style::after{clear: both;}
+
+/*Login Page Contents*/
+#login fieldset{border-color: navy; border-style: solid; width: 400px; margin: auto;
+margin-top: 70px; margin-bottom: 135px;}
+#login fieldset legend{font-size: 120%; padding-bottom:10px;color: navy;}
+#login label{margin-left: 0; float: left; text-align: right; width: 5.7em;font-size: 94%;}
+#login input{margin-left: .5em; width: 17em;margin-bottom: 10px;}
+#login_submit{margin-left: 95px !important;}
+#contact_link{text-decoration: none; display: block; margin-left: 120px; color:  navy;}
+#contact_link:visited {color: navy}
+#contact_link:hover{text-decoration: underline;}
+
+/*Contact Page Contents*/
+#contact fieldset{border-color: navy; border-style: solid; width: 550px; margin: auto;
+    margin-top: 70px; margin-bottom: 135px;}
+#contact fieldset legend{font-size: 120%; padding-bottom:10px;color: navy;}
+#contact label{margin-left: 0; float: left; text-align: right; width: 5.7em;font-size: 94%;}
+#contact input{margin-left: .5em; width: 17em;margin-bottom: 10px;}
+#contact_submit{margin-left: 95px !important;}
+#contact p{font-size: 94%;margin-left: 20px; margin-bottom: 0;float: left;margin-top: 0;}
+#contact textarea{margin-left: 7px;width: 60%;height: 80px;margin-bottom: 8px;}
+
+/*Footer*/
+#copy{text-align: center; color:white;font-size: 82%;}
+
+footer{
+    clear: both;
+    border: 2px solid navy;
+    background-color: navy;
+}
