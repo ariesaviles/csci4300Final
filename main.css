@@ -77,8 +77,29 @@ body {
 }
 
 #header_style::after{clear: both;}
-#dummy_content{height:370px;}
 
+/*Login Page Contents*/
+#login fieldset{border-color: navy; border-style: solid; width: 400px; margin: auto;
+margin-top: 70px; margin-bottom: 135px;}
+#login fieldset legend{font-size: 120%; padding-bottom:10px;color: navy;}
+#login label{margin-left: 0; float: left; text-align: right; width: 5.7em;font-size: 94%;}
+#login input{margin-left: .5em; width: 17em;margin-bottom: 10px;}
+#login_submit{margin-left: 95px !important;}
+#contact_link{text-decoration: none; display: block; margin-left: 120px; color:  navy;}
+#contact_link:visited {color: navy}
+#contact_link:hover{text-decoration: underline;}
+
+/*Contact Page Contents*/
+#contact fieldset{border-color: navy; border-style: solid; width: 550px; margin: auto;
+    margin-top: 70px; margin-bottom: 135px;}
+#contact fieldset legend{font-size: 120%; padding-bottom:10px;color: navy;}
+#contact label{margin-left: 0; float: left; text-align: right; width: 5.7em;font-size: 94%;}
+#contact input{margin-left: .5em; width: 17em;margin-bottom: 10px;}
+#contact_submit{margin-left: 95px !important;}
+#contact p{font-size: 94%;margin-left: 20px; margin-bottom: 0;float: left;margin-top: 0;}
+#contact textarea{margin-left: 7px;width: 60%;height: 80px;margin-bottom: 8px;}
+
+/*Footer*/
 #copy{text-align: center; color:white;font-size: 82%;}
 
 footer{
