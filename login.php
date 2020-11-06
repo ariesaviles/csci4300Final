@@ -23,7 +23,7 @@
                     <label for="passwrd">Password:</label>
                     <input type="text" id="passwrd" required><br>
                     <input type="submit" value="Login" id="login_submit"> <br>
-                    <a href="construction.html" id="contact_link">Are you a new user?</a>
+                    <a href="newUser.php" id="contact_link">Are you a new user?</a>
                 </fieldset>
             </form>
 
