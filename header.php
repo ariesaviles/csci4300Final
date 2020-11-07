@@ -14,7 +14,7 @@
             <li><a href="home.php"><b> Products</b></a></li>
             <li><a href="construction.html"><img src="shopping_cart.svg" alt="Shopping cart"><b>Cart</b></a></li>
             <li><a href="login.php"><img src="account_profile.svg" alt="Profile"><b>Login</b></a></li>
-            <li><a href="construction.html"><b>About</b><img src="dropdown_arrow.svg" alt="Dropdown"></a>
+            <li><a href="about.php"><b>About</b><img src="dropdown_arrow.svg" alt="Dropdown"></a>
                 <ul>
                     <li><a href="contact.php"><b>Contact Us</b></a></li>
                 </ul>

@@ -202,17 +202,34 @@ body {
 #newUser_submit {
     margin-left: 95px !important;
 }
-#contact_link {
-    text-decoration: none;
-    display: block;
-    margin-left: 120px;
+
+/* About Us */
+
+#aboutUs fieldset {
+    border-color: navy;
+    border-style: solid;
+    width: 600px;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 135px;
+}
+#aboutUs fieldset legend {
+    font-size: 120%;
+    padding-bottom: 10px;
     color: navy;
 }
-#contact_link:visited {
-    color: navy
+#aboutUs fieldset img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+    height: 300px;
 }
-#contact_link:hover {
-    text-decoration: underline;
+#aboutUs fieldset p {
+    text-align: center;
+}
+#aboutUs fieldset h4 {
+    color: navy;
 }
 
 /*Footer*/
