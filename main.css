@@ -203,6 +203,22 @@ body {
     margin-left: 95px !important;
 }
 
+/*  Process New User */
+
+#processNewUser fieldset {
+    border-color: navy;
+    border-style: solid;
+    width: 550px;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+#processNewUser fieldset h3 {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 /* About Us */
 
 #aboutUs fieldset {

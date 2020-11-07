@@ -12,8 +12,8 @@ function newFunction() {
         var password = $("passwrd").value;
         var confirmPassword = $("confirmPasswrd").value;
 
-        console.log(password);
-        console.log(confirmPassword);
+        // console.log(password);
+        // console.log(confirmPassword);
 
         // validate the entries
         if (password != confirmPassword) {
@@ -26,9 +26,11 @@ function newFunction() {
         // submit the form if all entries are valid
         // otherwise, display an error message
         if (errorMessage == "") {
-            $("email_form").submit();
+            $("newUser_form").submit();
+            return true;
         } else {
             alert(errorMessage);
+            return false;
         }
     };
 
