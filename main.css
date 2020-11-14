@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 #header_style {
-    background: navy;
+    background: RoyalBlue;
 }
 #logo {
     display: block;
@@ -57,7 +57,7 @@ body {
     font-size: 105%;
     padding-top: 12.5px;
     padding-bottom: 12.5px;
-    background-color: navy;
+    background-color: RoyalBlue;
     text-align: center;
     width: 100%;
     display: block;
@@ -70,7 +70,7 @@ body {
 .nav_menu ul ul {
     display: none;
     position: absolute;
-    background-color: navy;
+    background-color: RoyalBlue;
     width: 100%
 }
 .nav_menu ul li:hover>ul {
@@ -88,7 +88,7 @@ body {
 /*Login Page Contents*/
 
 #login fieldset {
-    border-color: navy;
+    border-color: RoyalBlue;
     border-style: solid;
     width: 400px;
     margin: auto;
@@ -98,7 +98,7 @@ body {
 #login fieldset legend {
     font-size: 120%;
     padding-bottom: 10px;
-    color: navy;
+    color: RoyalBlue;
 }
 #login label {
     margin-left: 0;
@@ -119,10 +119,10 @@ body {
     text-decoration: none;
     display: block;
     margin-left: 120px;
-    color: navy;
+    color: RoyalBlue;
 }
 #contact_link:visited {
-    color: navy
+    color: RoyalBlue
 }
 #contact_link:hover {
     text-decoration: underline;
@@ -131,7 +131,7 @@ body {
 /*Contact Page Contents*/
 
 #contact fieldset {
-    border-color: navy;
+    border-color: RoyalBlue;
     border-style: solid;
     width: 550px;
     margin: auto;
@@ -141,7 +141,7 @@ body {
 #contact fieldset legend {
     font-size: 120%;
     padding-bottom: 10px;
-    color: navy;
+    color: RoyalBlue;
 }
 #contact label {
     margin-left: 0;
@@ -175,7 +175,7 @@ body {
 /* New User Login */
 
 #newUser fieldset {
-    border-color: navy;
+    border-color: RoyalBlue;
     border-style: solid;
     width: 400px;
     margin: auto;
@@ -185,7 +185,7 @@ body {
 #newUser fieldset legend {
     font-size: 120%;
     padding-bottom: 10px;
-    color: navy;
+    color: RoyalBlue;
 }
 #newUser label {
     margin-left: 0;
@@ -206,7 +206,7 @@ body {
 /*  Process New User */
 
 #processNewUser fieldset {
-    border-color: navy;
+    border-color: RoyalBlue;
     border-style: solid;
     width: 550px;
     margin: auto;
@@ -222,7 +222,7 @@ body {
 /* About Us */
 
 #aboutUs fieldset {
-    border-color: navy;
+    border-color: RoyalBlue;
     border-style: solid;
     width: 600px;
     margin: auto;
@@ -232,20 +232,56 @@ body {
 #aboutUs fieldset legend {
     font-size: 120%;
     padding-bottom: 10px;
-    color: navy;
+    color: RoyalBlue;
 }
 #aboutUs fieldset img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 280px;
-    height: 300px;
+    width: 550px;
+    height: 354px;
 }
 #aboutUs fieldset p {
     text-align: center;
 }
 #aboutUs fieldset h4 {
-    color: navy;
+    color: RoyalBlue;
+}
+
+/* Products */
+
+#products aside {
+    float: left;
+}
+#products aside h3 {
+    color: gold;
+    margin-left: 1.5em;
+}
+#products aside ul {
+    list-style: none;
+    margin-left: -0.5em;
+}
+#products aside li {
+    padding-bottom: 0.2em;
+}
+#products section {
+    margin-left: 10em;
+}
+#products section h3 {
+    color: gold;
+}
+#products section table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+#products section th, td {
+    border: 1px dashed black;
+    padding: 0.3em;
+    text-align: left;
+}
+#products section td {
+    padding-bottom: 0.5em;
 }
 
 /*Footer*/
@@ -257,6 +293,6 @@ body {
 }
 footer {
     clear: both;
-    border: 2px solid navy;
-    background-color: navy;
+    border: 2px solid RoyalBlue;
+    background-color: RoyalBlue;
 }

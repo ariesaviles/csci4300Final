@@ -18,10 +18,11 @@
     <div id="aboutUs">
         <fieldset>
             <legend><b> About Us </b></legend>
-            <img src="stockImg.jpg" id="stockImg" alt="Stock Image">
-            <p>In 2019, we started SAJ to provide quality <b>[products]</b> at a price customers could afford with top notch service.
+            <img src="MandKImg.jpg" id="stockImg" alt="Stock Image">
+            <p>In 2019, we started SAJ to provide quality computer accessories at a price customers could afford with top notch service.
                 One year later, we are still determined to deliver the best online shopping experience we can.
-                <b>[Add something about products and how they’re amazing or something ¯\_(ツ)_/¯ ].</b>
+                All of the products we sell go through a rigorous testing phase before we decide to sell it under out name. 
+                We believe technology is the future and want to provide the best products for our customers to use. 
                 We take great pride in our company and the products we sell.
                 Although we have seen a substantial growth in business, our commitment remains the same: creating the excellent products with excellent service.
                 We aim to give them the best experience we can, offering free returns or exchanges, and the best customer service representatives in the industry. </p>
