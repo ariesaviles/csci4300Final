@@ -1,3 +1,12 @@
+<?php
+    include('database.php');
+
+    $query='SELECT * FROM products LIMIT 12';
+
+    $products=$db->query($query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,13 +21,13 @@
         <?php include('header.php'); ?>
         <!-- Preview of homepage format, until the database is added-->
         <div id="homepage_content">
-            <?php for ($i = 1; $i < 10; $i++) {
-                echo "<a href='construction.html' class='products' >";
-                echo "<img src='https://loremflickr.com/260/250/{$i}' alt='Item'>";
-                echo "<p>Product {$i} Name</p>";
-                echo "<p><b>$25.00</b></p>";
-                echo "</a>";
-            } ?>
+            <?php foreach($products as $product):?>
+                <a href='construction.html?id=<?php echo $product['productID']?>' class='products'>
+                <img src='<?php echo $product['productImageURL']?>' alt='Item'>
+                <p><?php echo $product['productName']?></p>
+                <p><b><?php echo $product['listPrice']?></b></p>
+                </a>
+            <?php endforeach;?>
         </div>
 
         <?php include('footer.php'); ?>

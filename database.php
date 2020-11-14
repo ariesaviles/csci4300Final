@@ -3,7 +3,7 @@
 
 
     //This code is just for testing purposes. 
-     $dsn='mysql:host=localhost;dbname=my_guitar_shop1';
+     $dsn='mysql:host=localhost;dbname=saj';
      $username='root';
      $password='';
     try {
