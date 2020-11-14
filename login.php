@@ -21,7 +21,7 @@
                     <label for="username">Username:</label>
                     <input type="text" id="username" required><br>
                     <label for="passwrd">Password:</label>
-                    <input type="text" id="passwrd" required><br>
+                    <input type="password" id="passwrd" required><br>
                     <input type="submit" value="Login" id="login_submit"> <br>
                     <a href="newUser.php" id="contact_link">Are you a new user?</a>
                 </fieldset>
