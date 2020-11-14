@@ -85,6 +85,36 @@ body {
     clear: both;
 }
 
+/* Homepage */
+#homepage_content{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto auto auto;
+    column-width: 260px;
+    column-count: auto;
+    margin: 30px;
+}
+.products{
+    display: block;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.products p{
+    width: 260px;
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+.products img{
+    width: 260px;
+    height: 250px;
+}
+.products:visited {
+    color: black;
+}
+.products:hover {
+    text-decoration: underline;
+}
 /*Login Page Contents*/
 
 #login fieldset {
