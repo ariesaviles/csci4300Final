@@ -86,7 +86,8 @@ body {
 }
 
 /* Homepage */
-#homepage_content{
+
+#homepage_content {
     display: grid;
     justify-items: center;
     grid-template-columns: auto auto auto;
@@ -94,18 +95,18 @@ body {
     column-count: auto;
     margin: 30px;
 }
-.products{
+.products {
     display: block;
     text-decoration: none;
     margin-bottom: 20px;
 }
-.products p{
+.products p {
     width: 260px;
     text-align: center;
     margin-bottom: 8px;
     margin-top: 5px;
 }
-.products img{
+.products img {
     width: 260px;
     height: 250px;
 }
@@ -115,6 +116,7 @@ body {
 .products:hover {
     text-decoration: underline;
 }
+
 /*Login Page Contents*/
 
 #login fieldset {
@@ -276,42 +278,6 @@ body {
 }
 #aboutUs fieldset h4 {
     color: RoyalBlue;
-}
-
-/* Products */
-
-#products aside {
-    float: left;
-}
-#products aside h3 {
-    color: gold;
-    margin-left: 1.5em;
-}
-#products aside ul {
-    list-style: none;
-    margin-left: -0.5em;
-}
-#products aside li {
-    padding-bottom: 0.2em;
-}
-#products section {
-    margin-left: 10em;
-}
-#products section h3 {
-    color: gold;
-}
-#products section table {
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin-bottom: 1em;
-}
-#products section th, td {
-    border: 1px dashed black;
-    padding: 0.3em;
-    text-align: left;
-}
-#products section td {
-    padding-bottom: 0.5em;
 }
 
 /*Footer*/

@@ -11,7 +11,7 @@
 
     <div class="nav_menu">
         <ul>
-            <li><a href="products.php"><b> Products</b></a></li>
+            <li><a href="home.php"><b> Products</b></a></li>
             <li><a href="construction.html"><img src="shopping_cart.svg" alt="Shopping cart"><b>Cart</b></a></li>
             <li><a href="login.php"><img src="account_profile.svg" alt="Profile"><b>Login</b></a></li>
             <li><a href="about.php"><b>About</b><img src="dropdown_arrow.svg" alt="Dropdown"></a>
