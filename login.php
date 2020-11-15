@@ -1,36 +1,9 @@
-<?php
-
-    session_start();
-    include_once('database.php');
-
-    $error = false;
-
-    if(isset($_POST['username'], $_POST['password'])){
-        $username=$_POST['username'];
-        $password=$_POST['password'];
-
-        $query="SELECT * FROM customers
-          WHERE customerUserName='$username' AND customerPassword='$password'";
-
-        $data=$db->query($query);
-
-        if($data->rowCount()>0){
-            $_SESSION['user']=$data->fetch()['customerID'];
-            header("Location: home.php");
-        }
-        else{
-            $error=true;
-        }
-
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title> SAJ</title>
         <link rel="stylesheet" href="main.css">
-        <script src="checkLogin.js"></script>
         <link rel="shortcut icon" href="favicon.ico">
     </head>
     <body>
@@ -42,20 +15,20 @@
 
         <div id="login">
 
-            <form name="login_form" onsubmit="return validateInput()" method="post">
+            <form name="login_form">
                 <fieldset id="login_section">
                     <legend><b>Login/Create Account</b></legend>
                     <label for="username">Username:</label>
-                    <input type="text" onchange="clearError(this)" name="username" id="username" required><br>
-                    <label for="password">Password:</label>
-                    <input type="password" onchange="clearError(this)" name="password" id="password" required><br>
-                    <input type="submit" value="Login" id="login_submit"><br>
-                    <?php if($error){echo "<p class='login_fail'><b>Login Failed</b></p>";}?>
+                    <input type="text" id="username" required><br>
+                    <label for="passwrd">Password:</label>
+                    <input type="password" id="passwrd" required><br>
+                    <input type="submit" value="Login" id="login_submit"> <br>
                     <a href="newUser.php" id="contact_link">Are you a new user?</a>
                 </fieldset>
             </form>
 
         </div>
+
         <?php include('footer.php'); ?>
     </body>
 </html>
