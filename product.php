@@ -50,6 +50,7 @@ $products = $db->query($query);
             </main>
         <?php endforeach; ?>
     </div>
+
     <?php include('footer.php'); ?>
 </body>
 

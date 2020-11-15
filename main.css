@@ -195,6 +195,12 @@ body {
 #login_submit {
     margin-left: 95px !important;
 }
+.login_fail {
+    color: red;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 7px;
+}
 #contact_link {
     text-decoration: none;
     display: block;
