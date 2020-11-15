@@ -25,7 +25,7 @@
                 <a href='construction.html?id=<?php echo $product['productID']?>' class='products'>
                 <img src='<?php echo $product['productImageURL']?>' alt='Item'>
                 <p><?php echo $product['productName']?></p>
-                <p><b><?php echo $product['listPrice']?></b></p>
+                <p><b>$<?php echo $product['listPrice']?></b></p>
                 </a>
             <?php endforeach;?>
         </div>
