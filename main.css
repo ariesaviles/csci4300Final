@@ -118,6 +118,53 @@ body {
     text-decoration: underline;
 }
 
+/* Product Page */
+
+#product_content {
+    margin: auto;
+    float: center;
+    margin-top: 70px;
+    margin-left: 150px;
+    margin-right: 150px;
+    /* min-width: 1600px;
+    max-width: 1600px; */
+}
+#product_content aside {
+    width: 700px;
+    margin: auto;
+    margin-bottom: 150px;
+    float: left;
+    /* border: 1px solid red; */
+}
+#product_content main {
+    width: 700px;
+    margin-right: 50px;
+    padding: 2em;
+    float: left;
+    /* border: 1px solid black; */
+}
+#product_content aside img {
+    /* width: 50%;
+    height: 50%;
+    float: center; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+#product_content label {
+    margin-left: 0;
+    float: left;
+    text-align: left;
+    width: 5.7em;
+    font-size: 94%;
+}
+#product_content input {
+    margin-left: 1em;
+    width: 8em;
+    margin-bottom: 10px;
+}
+
 /*Login Page Contents*/
 
 #login fieldset {

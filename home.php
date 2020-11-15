@@ -1,7 +1,7 @@
 <?php
     include('database.php');
 
-    $query='SELECT * FROM products LIMIT 12';
+    $query='SELECT * FROM products';
 
     $products=$db->query($query);
 
@@ -22,7 +22,7 @@
         <!-- Preview of homepage format, until the database is added-->
         <div id="homepage_content">
             <?php foreach($products as $product):?>
-                <a href='construction.html?id=<?php echo $product['productID']?>' class='products'>
+                <a href='product.php?id=<?php echo $product['productID']?>' class='products'>
                 <img src='<?php echo $product['productImageURL']?>' alt='Item'>
                 <p><?php echo $product['productName']?></p>
                 <p><b><?php echo $product['listPrice']?></b></p>

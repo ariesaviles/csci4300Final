@@ -16,10 +16,12 @@ function newFunction() {
         // console.log(confirmPassword);
 
         // validate the entries
+
+        if (password.length < 6 && confirmPassword.length < 6) {
+            errorMessage = "Password must be at least 6 characters";
+        }
         if (password != confirmPassword) {
             errorMessage = "Passwords do not match";
-        } else {
-
         }
         // && password.length >= 6 && confirmPassword.legnth >= 6
 
