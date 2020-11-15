@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title> SAJ</title>
         <link rel="stylesheet" href="main.css">
+        <script src="checkContact.js"></script>
         <link rel="shortcut icon" href="favicon.ico">
     </head>
     <body>
@@ -13,13 +14,13 @@
     <!-- Replace the div below with your content-->
     <div id="contact">
 
-        <form name="contact_form">
+        <form name="contact_form" onsubmit="return validateInput()" method="post">
             <fieldset id="contact_section">
                 <legend><b>Contact Us</b></legend>
                 <label for="fname">Full Name:</label>
-                <input type="text" id="fname" required><br>
+                <input type="text" onchange="clearError(this)" id="fname" required><br>
                 <label for="email">Email:</label>
-                <input type="text" id="email" required><br>
+                <input type="text" onchange="clearError(this)" id="email" required><br>
                 <label for="subject">Subject:</label>
                 <input type="text" id="subject" required><br>
                 <p>Message:</p>
