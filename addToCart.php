@@ -1,39 +1,36 @@
 <?php
+// this php simply adds the specified product to the carts database
+// after adding, displays the shoppingCart.php
 
-include('database.php');
+if(!isset($_SESSION))
+{
+    session_start();
+}
+
+$productID = $_POST['product_id']; // dependent on the product.php form
+$quantity = filter_input(INPUT_POST, 'itemqty'); // dependent on the product.php form
+$cartID = $_SESSION['user'];
+$customerID = $_SESSION['user'];
+
+if ($productID == null || $quantity == null || $cartID == null || $customerID == null) {
+  // error message goes here
+  $error=true;
+} else {
+  require_once('database.php');
+
+  $query='INSERT INTO carts (cartID, cartCustomerID, cartProductID, cartProductQuantity)
+          VALUES(:cartID, :customerID, :cartProductID, :quantity)';
+
+  $insert = $db->prepare($query);
+  $insert->bindValue(':cartID', $cartID);
+  $insert->bindValue(':customerID', $customerID);
+  $insert->bindValue(':cartProductID', $productID);
+  $insert->bindValue(':quantity', $quantity);
+  $insert->execute();
+  $insert->closeCursor();
+
+  include('shoppingCart.php');
+}
 
 
-// get the products
-$productID = $_POST['product_id'];
-
-// gets the product that matches the id
-$query = "SELECT * FROM products WHERE productID='$productID'";
-$products = $db->query($query);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title> SAJ</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="shortcut icon" href="favicon.ico">
-</head>
-
-<body>
-    <!-- Paste the following php files below into your file to obtain the navigation and footer-->
-    <!-- Make sure your files that contains HTML are .php-->
-    <?php include('header.php'); ?>
-
-    <!--Replace the div below with your content-->
-
-    <div id="addToCart">
-        <h1> Under Construction</h1>
-
-    </div>
-
-    <?php include('footer.php'); ?>
-</body>
-
-</html>
