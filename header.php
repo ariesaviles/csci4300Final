@@ -9,12 +9,12 @@
 
     <a href="home.php"><img src="SAJlogo.png" id="logo" alt="SAJ Logo"></a>
 
-    <div class="search_box">
-        <input type="text" placeholder="Search" name="search">
+    <form class="search_box" action="search.php" method="get">
+        <input type="text" placeholder="Search" name="query">
         <button type="submit">
             <img src="search.svg" alt="Search">
         </button>
-    </div>
+    </form>
 
     <div class="nav_menu">
         <ul>
