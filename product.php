@@ -41,8 +41,6 @@ $products = $db->query($query);
                 <h2><?php echo $product['productName'] ?></h2>
                 <form name="addToCart_form" method="post" action="addToCart.php">
                     <label for="price"><b>$<?php echo $product['listPrice'] ?></b></label>
-
-
                     <br>
                     <label for="quantity">Quantity:</label>
                     <select name="itemqty">
@@ -58,10 +56,7 @@ $products = $db->query($query);
                     <input type="hidden" name="product_id" value="<?php echo $productID?>">
                     <input type="submit" value="Add to Cart" id="addToCart_submit"> <br>
                 </form>
-                <p> Add product Desctiption here. Add product Desctiption here. Add product Desctiption here. Add product Desctiption here.
-                Add product Desctiption here. Add product Desctiption here. Add product Desctiption here. Add product Desctiption here.
-                Add product Desctiption here. Add product Desctiption here. Add product Desctiption here. Add product Desctiption here.
-                </p>
+                <p> <?php echo $product['productDescription'] ?> </p>
             </main>
 
         <?php endforeach; ?>
