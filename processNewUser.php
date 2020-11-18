@@ -1,3 +1,38 @@
+<?php
+
+include('database.php');
+
+// get the info the user entered in the 
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['passwrd'];
+$date = date("Ymd");
+$userExists = FALSE;
+
+// query to see if this email already exitsts in the database
+$query = "SELECT * FROM `customers` WHERE customeremail = '$email'";
+$userCheck = $db->query($query);
+
+// Check all returned rows and see if they compare to the user email. If their email matches, 
+// the user already exists. 
+foreach ($userCheck as $user) :
+    if ($user['customeremail'] == $email) {
+        echo $user['customerUserName'];
+        echo '<br>';
+        echo 'CUSTOMER EXITSTS' . '<br>';
+        $userExists = TRUE;
+    } // if
+endforeach;
+
+// if the user does not exists, then add them to the database
+if ($userExists == FALSE) {
+    $query = "INSERT INTO customers 
+        (customerUserName, customeremail, customerPassword, customerCreationDate) 
+        VALUES ('$username', '$email', '$password', '$date')";
+    $db->exec($query);
+} // if
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,24 +46,14 @@
 
 <body>
     <?php include('header.php'); ?>
-    <!-- This page is to make sure there were no errors attempting to add the user to the database.
-         If there was an error, then it should display "Error adding user to database" 
-         and redirect back to create account page. If it was successful, then It should 
-         say "Account Creation Successful!" and redirect to the login page. This cannot be implemented 
-         until the database is created. This page will also automatically redirect after 2 seconds. -->
     <div id="processNewUser">
         <fieldset>
-            <?php
-                // account is just a tester variable
-                $account = '5';
-                // if account creation was not successful...
-                if ($account < 0) {
-            ?>
+            <?php if ($userExists == TRUE) { ?>
                 <meta http-equiv="refresh" content="2;newUser.php" />
-                <h3> Error adding user to database! Redirecting to login page... </h3>
+                <h3> Error: User already Exists. Redirecting to login page... </h3>
             <?php } else { ?>
                 <meta http-equiv="refresh" content="2;login.php" />
-                <h3> Account Creation Successful! Redirecting in 2 seconds... </h3>
+                <h3> Account Creation Successful! Redirecting to login page... </h3>
             <?php } // if-else ?>
         </fieldset>
     </div>
