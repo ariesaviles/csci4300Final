@@ -16,7 +16,6 @@
 
         if($data->rowCount()>0){
             $_SESSION['user']=$data->fetch()['customerID'];
-            $_SESSION['cartID'] = $cartID; // added this to assist with cart
             header("Location: home.php");
         }
         else{

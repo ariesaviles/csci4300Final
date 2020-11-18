@@ -257,6 +257,12 @@ body {
     height: 80px;
     margin-bottom: 8px;
 }
+.contact_success {
+    color: green;
+    width: 100%;
+    text-align: center;
+}
+
 
 /* New User Login */
 
