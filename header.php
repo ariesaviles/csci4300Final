@@ -19,7 +19,7 @@
     <div class="nav_menu">
         <ul>
             <li><a href="home.php"><b> Products</b></a></li>
-            <li><a href="construction.html"><img src="shopping_cart.svg" alt="Shopping cart"><b>Cart</b></a></li>
+            <li><a href="shoppingCart.php"><img src="shopping_cart.svg" alt="Shopping cart"><b>Cart</b></a></li>
             <?php if(isset($_SESSION['user'])){
                 echo "<li><a href='logout.php'><img src='logout.svg' alt='Profile'><b>Logout</b></a></li>";
             } else{
@@ -32,5 +32,5 @@
             </li>
         </ul>
     </div>
-    
+
 </div>
