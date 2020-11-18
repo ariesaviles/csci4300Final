@@ -8,21 +8,29 @@ if(!isset($_SESSION))
 }
 
 $productID = $_POST['product_id']; // dependent on the product.php form
+echo $productID;
 $quantity = filter_input(INPUT_POST, 'itemqty'); // dependent on the product.php form
-$cartID = $_SESSION['user'];
+
+//$cartID = 1;
+//echo $cartID;
+
 $customerID = $_SESSION['user'];
 
-if ($productID == null || $quantity == null || $cartID == null || $customerID == null) {
-  // error message goes here
+$_SESSION['cartID'] = $_SESSION['user'];
+echo $_SESSION['cartID'];
+
+if ($productID == null || $quantity == null || $customerID == null) {
+  // error message goes hereecho
+  echo "error";
   $error=true;
 } else {
   require_once('database.php');
 
-  $query='INSERT INTO carts (cartID, cartCustomerID, cartProductID, cartProductQuantity)
-          VALUES(:cartID, :customerID, :cartProductID, :quantity)';
+  $query='INSERT INTO carts (cartCustomerID, cartProductID, cartProductQuantity)
+          VALUES(:customerID, :cartProductID, :quantity)';
 
   $insert = $db->prepare($query);
-  $insert->bindValue(':cartID', $cartID);
+  //$insert->bindValue(':cartID', $cartID);
   $insert->bindValue(':customerID', $customerID);
   $insert->bindValue(':cartProductID', $productID);
   $insert->bindValue(':quantity', $quantity);
