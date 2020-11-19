@@ -23,7 +23,7 @@ if ($productID == null || $quantity == null || $customerID == null) {
   echo "error";
   $error = true;
 } else {
-  require_once('database.php');
+ require_once('database.php');
 
   $query = 'INSERT INTO carts (cartCustomerID, cartProductID, cartProductQuantity)
           VALUES(:customerID, :cartProductID, :quantity)';
@@ -36,7 +36,10 @@ if ($productID == null || $quantity == null || $customerID == null) {
   $insert->execute();
   $insert->closeCursor();
 
-  include('shoppingCart.php');
+  // header will take the user to the cart page 
+  header("Location: shoppingCart.php");
+   // include('shoppingCart.php');
+
 }
 
 

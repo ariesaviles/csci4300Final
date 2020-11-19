@@ -355,6 +355,9 @@ body {
 #aboutUs fieldset h4 {
     color: RoyalBlue;
 }
+
+/* Cart  */
+
 #cartTable tr {
     padding: 20px;
 }
