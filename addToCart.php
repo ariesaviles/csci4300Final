@@ -2,9 +2,8 @@
 // this php simply adds the specified product to the carts database
 // after adding, displays the shoppingCart.php
 
-if(!isset($_SESSION))
-{
-    session_start();
+if (!isset($_SESSION)) {
+  session_start();
 }
 
 $productID = $_POST['product_id']; // dependent on the product.php form
@@ -22,11 +21,11 @@ echo $_SESSION['cartID'];
 if ($productID == null || $quantity == null || $customerID == null) {
   // error message goes hereecho
   echo "error";
-  $error=true;
+  $error = true;
 } else {
   require_once('database.php');
 
-  $query='INSERT INTO carts (cartCustomerID, cartProductID, cartProductQuantity)
+  $query = 'INSERT INTO carts (cartCustomerID, cartProductID, cartProductQuantity)
           VALUES(:customerID, :cartProductID, :quantity)';
 
   $insert = $db->prepare($query);
