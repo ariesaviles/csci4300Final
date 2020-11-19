@@ -18,10 +18,9 @@ $products = $db->query($query);
 </head>
 
 <body>
-    <!-- Paste the following php files below into your file to obtain the navigation and footer-->
-    <!-- Make sure your files that contains HTML are .php-->
     <?php include('header.php'); ?>
-    <!-- Preview of homepage format, until the database is added-->
+
+    <!-- Displays all the products -->
     <div id="homepage_content">
         <?php foreach ($products as $product) : ?>
             <div id="product_square">
