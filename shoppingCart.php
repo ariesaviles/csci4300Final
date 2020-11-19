@@ -48,7 +48,7 @@ $cartProducts = $db->query($q2)
     <?php include('header.php'); ?>
 
     <!--Replace the div below with your content-->
-    <h1><?php
+    <h1><p id="cartName"><?php
   /*  $query="SELECT * FROM customers
       WHERE customerUserName='$username' AND customerPassword='$password'";
 
@@ -57,34 +57,40 @@ $cartProducts = $db->query($q2)
     if (isset($_SESSION['user'])) {
         echo $name. "'s Shopping Cart";
     } else {
-        echo "Please log in first to see your cart.";
+        echo "Please login to access your cart.";
+
     }
-    ?>
+    ?></p>
     </h1>
 
-    <table class="table">
+    <table class="cartTable">
     <tbody>
     <tr>
     <td></td>
-    <td style="">ITEM NAME</td>
-    <td>QUANTITY</td>
-    <td>UNIT PRICE</td>
-    <td>ITEMS TOTAL</td>
+    <th>ITEM NAME</th>
+    <th>QUANTITY</th>
+    <th>UNIT PRICE</th>
+    <th>ITEM TOTAL</th>
     <td></td>
     </tr>
 
     <main>
 
-    <div id="addToCart">
+    <div class="addToCart">
+      <?php
+      if(isset($_SESSION['user'])){
+          $total_price = 0;
+          echo $name. "'s Shopping Cart";
+      ?>
 
       <?php foreach($cartProducts as $product):?>
 
           </a>
           <tr>
           <td>
-            <img src='<?php echo $product['productImageURL'] ?>' alt='Item' width="50" height="40" />
+            <img src='<?php echo $product['productImageURL'] ?>' alt='Item' width="70" height="70" />
           </td>
-          <td><?php echo $product["productName"]; ?> <br />
+          <td class="prodName"><?php echo $product["productName"]; ?> <br />
             <form method='post' action='removeFromCart.php'>
               <input type='hidden' name='code' value="<?php echo $product["productID"]; ?>" />
               <input type='hidden' name='action' value="remove" />
@@ -96,25 +102,37 @@ $cartProducts = $db->query($q2)
           <form method='post' action=''>
           <input type='hidden' name='code' value="<?php echo $product["productID"]; ?>" />
           <input type='hidden' name='action' value="change" />
-          <input type="hidden" name="qty" value="$product['cartProductQuantity']">
-            <?php echo $product['cartProductQuantity']?>
+          <input class="qty" type="hidden" name="qty" value="$product['cartProductQuantity']">
+            <p id="qty"><?php echo $product['cartProductQuantity']?></p>
 
       </form>
         </td>
-        <td><?php echo "$".$product["listPrice"]; ?></td>
-<td><?php echo "$".$product["listPrice"]*$product["cartProductQuantity"]; ?></td>
+        <td><p><?php echo "$".$product["listPrice"]; ?></td></p>
+<td><p><?php echo "$".$product["listPrice"]*$product["cartProductQuantity"]; ?></td></p>
 </tr>
 <?php
-      $total_price = 0;
+      //$total_price = 0;
 $total_price += ($product["listPrice"]*$product["cartProductQuantity"]);
 
 ?>
       <?php endforeach;?>
-
+      <tr>
+      <td colspan="5" align="right">
+      <strong id="total">TOTAL: <?php echo "$".$total_price; ?></strong>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <?php
+}else{
+echo "<h3>Please login to access your shopping cart!</h3>";
+}
+?>
     </div>
+
   </main>
 
-  <div>
+  <div id="footer">
     <?php include('footer.php'); ?>
   </div>
 </body>
