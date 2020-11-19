@@ -26,37 +26,36 @@ $products = $db->query($query);
 </head>
 
 <body>
-    <!-- Paste the following php files below into your file to obtain the navigation and footer-->
-    <!-- Make sure your files that contains HTML are .php-->
     <?php include('header.php'); ?>
-    <!-- Preview of homepage format, until the database is added-->
     <div id="product_content">
         <?php foreach ($products as $product) : ?>
 
+            <!-- Display the product image -->
             <aside>
                 <img src='<?php echo $product['productImageURL'] ?>' alt='Item'>
             </aside>
 
+            <!-- Display the product information -->
             <main>
                 <h2><?php echo $product['productName'] ?></h2>
                 <form name="addToCart_form" method="post" action="addToCart.php">
-                    <label for="price"><b>$<?php echo $product['listPrice'] ?></b></label>
-                    <br>
+                    <p for="price"><b>$<?php echo $product['listPrice'] ?></b></p>
+                    <!-- Display the quantity dropdown menu -->
                     <label for="quantity">Quantity:</label>
                     <select name="itemqty">
-                      <?php for($i = 1; $i <= 10; $i++) : ?>
-                        <option value="<?php echo $i; ?>">
-                          <?php echo $i; ?>
-                        </option>
-                      <?php endfor; ?>
-                    </select>
-                    <br>
-
-
-                    <input type="hidden" name="product_id" value="<?php echo $productID?>">
+                        <?php for ($i = 1; $i <= 10; $i++) : ?>
+                            <option value="<?php echo $i; ?>">
+                                <?php echo $i; ?>
+                            </option>
+                        <?php endfor; ?>
+                    </select><br><br>
+                    <!-- hiddent value for the product ID -->
+                    <input type="hidden" name="product_id" value="<?php echo $productID ?>">
+                    <!-- Add to cart button -->
                     <input type="submit" value="Add to Cart" id="addToCart_submit"> <br>
                 </form>
-                <p> <?php echo $product['productDescription'] ?> </p>
+                <!-- Product description -->
+                <p><?php echo $product['productDescription'] ?></p>
             </main>
 
         <?php endforeach; ?>

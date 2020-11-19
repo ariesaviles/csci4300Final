@@ -152,17 +152,20 @@ body {
     margin-right: auto;
     width: 70%;
 }
-#product_content label {
-    margin-left: 0;
+#product_content main label {
     float: left;
+    margin-left: 1em;
     text-align: left;
     width: 5.7em;
     font-size: 94%;
 }
-#product_content input {
+#product_content main input {
     margin-left: 1em;
-    width: 8em;
+    width: 7em;
     margin-bottom: 10px;
+}
+#product_content main p {
+    text-align: left;
 }
 
 /*Login Page Contents*/
@@ -263,7 +266,6 @@ body {
     text-align: center;
 }
 
-
 /* New User Login */
 
 #newUser fieldset {
@@ -339,41 +341,40 @@ body {
 #aboutUs fieldset h4 {
     color: RoyalBlue;
 }
-
 #cartTable tr {
-  padding: 20px;
+    padding: 20px;
 }
 p #cartName {
-  text-align: center;
+    text-align: center;
 }
 .addToCart td, th, tr {
-  margin-left: 40px;
-  margin-right: 40px;
-  padding: 10px;
-  border-bottom: #F0F0F0 1px solid;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 10px;
+    border-bottom: #F0F0F0 1px solid;
 }
 p, #qty {
-  text-align: center;
-  padding-top: -10px;
+    text-align: center;
+    padding-top: -10px;
 }
 .addToCart {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 25px;
-  width: 100%;
-  font-size: 0;
-  text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
 }
 table {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 table td {
     border-bottom: #F0F0F0 1px solid;
 }
 strong #total {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 /*Footer*/
