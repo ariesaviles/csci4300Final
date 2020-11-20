@@ -7,6 +7,11 @@ if (!isset($_SESSION)) {
   // header("Location: cartError.php");
 }
 
+// if the user is not logged in, redirect them to the login page.
+if ($_SESSION['user'] <= 0) {
+  header("Location: cartError.php");
+} // if
+
 $productID = $_POST['product_id']; // dependent on the product.php form
 echo $productID;
 $quantity = filter_input(INPUT_POST, 'itemqty'); // dependent on the product.php form
