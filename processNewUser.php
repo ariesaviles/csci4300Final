@@ -13,16 +13,11 @@ $userExists = FALSE;
 $query = "SELECT * FROM `customers` WHERE customeremail = '$email'";
 $userCheck = $db->query($query);
 
-// Check all returned rows and see if they compare to the user email. If their email matches, 
-// the user already exists. 
-foreach ($userCheck as $user) :
-    if ($user['customeremail'] == $email) {
-        echo $user['customerUserName'];
-        echo '<br>';
-        echo 'CUSTOMER EXITSTS' . '<br>';
-        $userExists = TRUE;
-    } // if
-endforeach;
+// Check if the query returned rows and if so, the user already exists.
+if ($userCheck->rowCount() > 0) {
+    $userExists = TRUE;
+}
+
 
 // if the user does not exists, then add them to the database
 if ($userExists == FALSE) {
@@ -54,7 +49,8 @@ if ($userExists == FALSE) {
             <?php } else { ?>
                 <meta http-equiv="refresh" content="2;login.php" />
                 <h3> Account Creation Successful! Redirecting to login page... </h3>
-            <?php } // if-else ?>
+            <?php } // if-else 
+            ?>
         </fieldset>
     </div>
     <?php include('footer.php'); ?>

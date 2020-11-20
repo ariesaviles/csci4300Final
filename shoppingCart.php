@@ -4,6 +4,7 @@ include('database.php');
 if(!isset($_SESSION))
 {
     session_start();
+    // header("Location: cartError.php");
 }
 
 //if (isset($_SESSION['cartID'])) {

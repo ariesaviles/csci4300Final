@@ -4,6 +4,7 @@
 
 if (!isset($_SESSION)) {
   session_start();
+  // header("Location: cartError.php");
 }
 
 $productID = $_POST['product_id']; // dependent on the product.php form
