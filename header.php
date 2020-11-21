@@ -18,7 +18,12 @@
 
     <div class="nav_menu">
         <ul>
-            <li><a href="home.php"><b> Products</b></a></li>
+            <li><a href="home.php"><b>Products</b><img src="dropdown_arrow.svg" alt="Dropdown"></a>
+                <ul>
+                    <li><a href="addProduct.php"><b>Add New Product</b></a></li>
+                    <li><a href="removeProduct.php"><b>Remove Product</b></a></li>
+                </ul>
+            </li>
             <li><a href="shoppingCart.php"><img src="shopping_cart.svg" alt="Shopping cart"><b>Cart</b></a></li>
             <?php if(isset($_SESSION['user'])){
                 echo "<li><a href='logout.php'><img src='logout.svg' alt='Profile'><b>Logout</b></a></li>";

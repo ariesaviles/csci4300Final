@@ -89,7 +89,7 @@ $cartProducts = $db->query($q2)
 
             <?php foreach ($cartProducts as $product) : ?>
 
-              </a>
+
               <tr>
                 <td>
                   <img src='<?php echo $product['productImageURL'] ?>' alt='Item' width="70" height="70" />
@@ -112,13 +112,11 @@ $cartProducts = $db->query($q2)
                   </form>
                 </td>
                 <td>
-                  <p><?php echo "$" . $product["listPrice"]; ?>
+                  <p><?php echo "$" . $product["listPrice"]; ?> </p>
                 </td>
-                </p>
                 <td>
-                  <p><?php echo "$" . $product["listPrice"] * $product["cartProductQuantity"]; ?>
+                  <p><?php echo "$" . $product["listPrice"] * $product["cartProductQuantity"]; ?> </p>
                 </td>
-                </p>
               </tr>
               <?php
               //$total_price = 0;
