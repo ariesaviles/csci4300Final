@@ -32,10 +32,10 @@
 
     $products=$db->query($query);
 
-    if($items->rowCount()>0){
-        $query="SELECT * FROM categories WHERE categoryID='$category'";
-        $name=$db->query($query)->fetch()['categoryName'];
-    }
+//    if($items->rowCount()>0){
+//        $query="SELECT * FROM categories WHERE categoryID='$category'";
+//        $name=$db->query($query)->fetch()['categoryName'];
+//    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -31,16 +31,30 @@ if ($productID == null || $quantity == null || $customerID == null) {
 } else {
  require_once('database.php');
 
-  $query = 'INSERT INTO carts (cartCustomerID, cartProductID, cartProductQuantity)
+  // checks to see if the cart for this product and customer already exist
+  $query = "SELECT * FROM carts WHERE cartCustomerID = '$customerID' AND cartProductID = '$productID'";
+  $item = $db->query($query);
+
+  if($item->rowCount() > 0){
+      //update the existing cart with new quantitu
+      $oldCount = $item->fetch()['cartProductQuantity'];
+      $count = $oldCount + $quantity;
+      $query = "UPDATE carts SET cartProductQuantity = '$count' WHERE 
+                cartCustomerID = '$customerID' AND cartProductID = '$productID'";
+      $db->prepare($query)->execute();
+  }else{
+      // if it doesn't exist, create a new cart
+      $query = 'INSERT INTO carts (cartCustomerID, cartProductID, cartProductQuantity)
           VALUES(:customerID, :cartProductID, :quantity)';
 
-  $insert = $db->prepare($query);
-  //$insert->bindValue(':cartID', $cartID);
-  $insert->bindValue(':customerID', $customerID);
-  $insert->bindValue(':cartProductID', $productID);
-  $insert->bindValue(':quantity', $quantity);
-  $insert->execute();
-  $insert->closeCursor();
+      $insert = $db->prepare($query);
+      //$insert->bindValue(':cartID', $cartID);
+      $insert->bindValue(':customerID', $customerID);
+      $insert->bindValue(':cartProductID', $productID);
+      $insert->bindValue(':quantity', $quantity);
+      $insert->execute();
+      $insert->closeCursor();
+  }
 
   // header will take the user to the cart page 
   header("Location: shoppingCart.php");
