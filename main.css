@@ -98,7 +98,7 @@ body {
 #product_square {
     /* border: red solid 1pt; */
     margin: auto;
-    float: center;
+    /*float: center;*/
     margin-bottom: 60px;
     width: 400px;
 }
@@ -136,7 +136,7 @@ body {
 
 #product_content {
     margin: auto;
-    float: center;
+    /*float: center;*/
     margin-top: 70px;
     margin-left: 150px;
     margin-right: 150px;
@@ -231,6 +231,55 @@ body {
     text-decoration: underline;
 }
 
+/* Remove Product Page*/
+.removeProduct aside{
+margin: auto;
+}
+.removeProduct table{
+width: 70%;
+margin: auto;
+padding-top: 20px;
+}
+#col_name{
+width: 60%;
+}
+.removeProduct th{
+text-align: left;
+padding-bottom: 5px;
+width: 10%;
+}
+.removeProduct th,td {
+padding-left: 6px;
+padding-right: 8px;
+padding-top: 3px;
+}
+.removeProduct td{
+padding-bottom: 15px;
+}
+.removeProduct ul{
+list-style: none;
+padding-left: 20px;
+width: 80%;
+margin: auto;
+margin-top: 20px;
+}
+.removeProduct ul li{
+margin-bottom: 10px;
+float: left;
+width: 25%;
+text-align: center;
+}
+#selected_category{
+color: RoyalBlue;
+}
+.removeProduct a{
+color: black;
+font-size: 120%;
+}
+.removeProduct a:visited{
+color: black;
+}
+
 /*Contact Page Contents*/
 
 #contact fieldset {
@@ -254,6 +303,11 @@ body {
     font-size: 94%;
 }
 #contact input {
+    margin-left: .5em;
+    width: 17em;
+    margin-bottom: 10px;
+}
+#contact select{
     margin-left: .5em;
     width: 17em;
     margin-bottom: 10px;
