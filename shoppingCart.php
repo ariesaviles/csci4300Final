@@ -137,7 +137,11 @@ $cartProducts = $db->query($q2)
           }
 ?>
 </div>
-
+<div id="checkoutButton">
+  <form action="checkout.php" method="post">
+    <input type="submit" name="" value="Proceed to Checkout">
+  </form>
+</div>
 </main>
 
 <div id="footer">

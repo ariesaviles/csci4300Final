@@ -393,8 +393,14 @@ strong #total {
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
+#checkoutButton {
+  margin: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 /* checkout */
+
 #checkout h1 {
   text-align: center;
 }
@@ -406,13 +412,11 @@ strong #total {
   margin-top: 20px;
   margin-bottom: 5px;
 }
-
 #checkout fieldset, #checkout legend {
   font-size: 120%;
   padding-bottom: 10px;
   color: RoyalBlue;
 }
-
 #checkout label {
     margin-left: 0;
     float: left;
@@ -420,7 +424,6 @@ strong #total {
     width: 5.7em;
     font-size: 94%;
 }
-
 #checkout input {
     margin-left: .5em;
     width: 17em;
@@ -446,6 +449,7 @@ strong #total {
 #processNewUser #paymentText h3 {
   margin-top: 10px;
 }
+
 /* footer */
 
 #copy {
