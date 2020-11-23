@@ -140,6 +140,7 @@ $cartProducts = $db->query($q2)
 <div id="checkoutButton">
   <form action="checkout.php" method="post">
     <input type="submit" name="" value="Proceed to Checkout">
+      <input type="hidden" name="total" <?php echo "value='$total_price'" ?>>
   </form>
 </div>
 </main>

@@ -5,7 +5,11 @@ if (!isset($_SESSION)) {
   session_start();
   // header("Location: cartError.php");
 }
-
+    // gets the total price from the cart as a post
+    $total_price= 0;
+    if(isset($_POST['total'])){
+        $total_price = $_POST['total'];
+    }
 
 // if the user is not logged in, redirect them to the login page.
 if ($_SESSION['user'] <= 0) {
@@ -86,7 +90,6 @@ $_SESSION['user'];
 
           <fieldset id="end">
             <div id="total">
-            <?php $total_price = $_SESSION['total']; ?>
               <strong>TOTAL: <?php echo "$" . $total_price; ?></strong>
               <br>
             <input type="submit" name="" value="Confirm Payment">

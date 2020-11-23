@@ -52,7 +52,7 @@ $products = $db->query($query);
                     <!-- hiddent value for the product ID -->
                     <input type="hidden" name="product_id" value="<?php echo $productID ?>">
                     <!-- Add to cart button -->
-                    <input type="submit" value="Add to Cart" id="addToCart_submit"> <br>
+                    <button type="submit" id="addToCart_submit">Add to Cart <img src="add_cart.svg" alt='Add to Cart'></button><br>
                 </form>
                 <!-- Product description -->
                 <p><?php echo $product['productDescription'] ?></p>
