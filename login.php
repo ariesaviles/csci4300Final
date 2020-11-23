@@ -42,13 +42,13 @@
 
         <div id="login">
 
-            <form name="login_form" onsubmit="return validateInput()" method="post">
+            <form name="login_form" method="post">
                 <fieldset id="login_section">
                     <legend><b>Login/Create Account</b></legend>
                     <label for="username">Username:</label>
-                    <input type="text" onchange="clearError(this)" name="username" id="username" required><br>
+                    <input type="text" onchange="checkLength(this,3)" name="username" id="username" required><br>
                     <label for="password">Password:</label>
-                    <input type="password" onchange="clearError(this)" name="password" id="password" required><br>
+                    <input type="password" onchange="checkLength(this,6)" name="password" id="password" required><br>
                     <input type="submit" value="Login" id="login_submit"><br>
                     <?php if($error){echo "<p class='login_fail'><b>Login Failed</b></p>";}?>
                     <a href="newUser.php" id="contact_link">Are you a new user?</a>

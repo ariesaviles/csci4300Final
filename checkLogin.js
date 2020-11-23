@@ -2,28 +2,13 @@ var $ = function(id){
     return document.getElementById(id);
 }
 
-var validateInput = function() {
-    var userName = $("username");
-    var password = $("password");
-    var error1 = "";
-    var error2 = "";
-    var valid = true;
+var checkLength = function(element, length){
 
-    if(userName.value.length < 3){
-        error1 = "Username is too short";
-        valid = false;
+    var error = `${element.name} must be at least ${length} characters`;
+
+    if(element.value.length < length){
+        element.setCustomValidity(error);
+    }else{
+        element.setCustomValidity("");
     }
-    if(password.value.length < 6){
-        error2 = "Password must be at least 6 characters";
-        valid = false;
-    }
-
-    userName.setCustomValidity(error1);
-    password.setCustomValidity(error2);
-
-    return valid;
-}
-
-var clearError = function(element){
-    element.setCustomValidity("")
 }

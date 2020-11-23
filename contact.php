@@ -2,8 +2,8 @@
 
     $sent = false;
 
-    if(isset($_POST['fname'], $_POST['email'], $_POST['subject'], $_POST['message'])){
-        $fname=$_POST['fname'];
+    if(isset($_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message'])){
+        $fname=$_POST['name'];
         $email=$_POST['email'];
         $subject=$_POST['subject'];
         $message=$_POST['message'];
@@ -21,7 +21,7 @@
         <meta charset="UTF-8">
         <title> SAJ</title>
         <link rel="stylesheet" href="main.css">
-        <script src="checkContact.js"></script>
+        <script src="checkLogin.js"></script>
         <link rel="shortcut icon" href="favicon.ico">
     </head>
     <body>
@@ -31,17 +31,17 @@
     <!-- Replace the div below with your content-->
     <div id="contact">
 
-        <form name="contact_form" onsubmit="return validateInput()" method="post">
+        <form name="contact_form" method="post">
             <fieldset id="contact_section">
                 <legend><b>Contact Us</b></legend>
-                <label for="fname">Full Name:</label>
-                <input type="text" onchange="clearError(this)" name="fname" id="fname" required><br>
+                <label for="name">Full Name:</label>
+                <input type="text" onchange="checkLength(this,5)" name="name" id="fname" required><br>
                 <label for="email">Email:</label>
-                <input type="text" onchange="clearError(this)" name="email" id="email" required><br>
+                <input type="email" name="email" id="email" required><br>
                 <label for="subject">Subject:</label>
-                <input type="text" name="subject" id="subject" required><br>
+                <input type="text" onchange="checkLength(this,3)" name="subject" id="subject" required><br>
                 <p>Message:</p>
-                <textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+                <textarea name="message" onchange="checkLength(this,10)" id="message" placeholder="Enter your message..."></textarea>
                 <input type="submit" value="Submit" id="contact_submit"> <br>
                 <?php if($sent){echo "<p class='contact_success'><b>Sent Successfully! :)</b></p>";}?>
             </fieldset>

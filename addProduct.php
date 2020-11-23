@@ -47,13 +47,13 @@
                     <?php endforeach; ?>
                 </select><br>
                 <label>Code:</label>
-                <input type="text" name="code"><br>
+                <input type="text" name="code" required><br>
                 <label>Name:</label>
-                <input type="text" name="name"><br>
+                <input type="text" name="name" required><br>
                 <label>List Price:</label>
-                <input type="text" name="price"><br>
+                <input type="number" min="0" name="price" required><br>
                 <label>Image URL:</label>
-                <input type="text" name="url"><br>
+                <input type="url" name="url" required><br>
                 <p>Describe:</p>
                 <textarea name="description" id="description" placeholder="Enter your description..."></textarea>
                 <input type="submit" value="Add Product" id="contact_submit">
