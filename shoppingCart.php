@@ -92,7 +92,9 @@ $cartProducts = $db->query($q2)
 
               <tr>
                 <td>
-                  <img src='<?php echo $product['productImageURL'] ?>' alt='Item' width="70" height="70" />
+                  <div id="cart_square">
+                    <img src='<?php echo $product['productImageURL'] ?>' id="cartImage" alt='Item' />
+                  </div>
                 </td>
                 <td class="prodName"><?php echo $product["productName"]; ?> <br />
                   <form method='post' action='removeFromCart.php'>

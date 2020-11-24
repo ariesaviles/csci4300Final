@@ -30,16 +30,7 @@
                 <input type="password" onchange="checkLength(this,6)" id="passwrd" name="passwrd" placeholder="At least 6 characters" pattern=".{6,}" title="6 or more characters" required><br>
                 <label for="confirmPasswrd">Confirm Password:</label>
                 <input type="password" onchange="checkLength(this,6)" id="confirmPasswrd" name="confirmPasswrd" placeholder="Re-enter password" pattern=".{6,}" title="6 or more characters" required><br>
-                <!-- <p id="error">Welcome!</p> -->
                 <input type="submit" value="Sign Up" id="newUser_submit" ><br>
-
-
-                <!-- <input type="text" onchange="checkLength(this,3)" name="subject" id="subject" required><br> -->
-
-
-                <!-- <script>
-                    document.getElementById("error").innerHTML = newFunction();
-                </script> -->
             </fieldset>
         </form>
     </div>

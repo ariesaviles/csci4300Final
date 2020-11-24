@@ -434,6 +434,20 @@ p, #qty {
     font-size: 0;
     text-align: center;
 }
+#cart_square {
+    /* border: red solid 1pt; */
+    width: 70px;
+    height: 70px;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+}
+#cartImage {
+    margin: auto;
+    max-width: 70px;
+    height: auto;
+    max-height: 70px;
+}
 table {
     margin: 0 auto;
 }

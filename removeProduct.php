@@ -71,7 +71,11 @@
             </tr>
             <?php foreach($products as $product):?>
                 <tr>
-                    <td><img src='<?php echo $product['productImageURL'] ?>' alt='Item' width="70" height="70" /></td>
+                    <td>
+                        <div id="cart_square">
+                            <img src='<?php echo $product['productImageURL'] ?>' id="cartImage" alt='Item' />
+                        </div>
+                    </td>
                     <td><?php echo $product['productCode']?></td>
                     <td><?php echo $product['productName']?></td>
                     <td>$<?php echo $product['listPrice']?></td>
