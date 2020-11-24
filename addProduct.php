@@ -51,7 +51,7 @@
                 <label>Name:</label>
                 <input type="text" name="name" required><br>
                 <label>List Price:</label>
-                <input type="number" min="0" name="price" required><br>
+                <input type="number" min="0" step="0.01" name="price" required><br>
                 <label>Image URL:</label>
                 <input type="url" name="url" required><br>
                 <p>Describe:</p>
