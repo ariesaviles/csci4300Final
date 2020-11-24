@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="main.css">
     <link rel="shortcut icon" href="favicon.ico">
     <script src="passwordMatch.js"></script>
+    <script src="checkLogin.js"></script>
+    
 </head>
 
 <body>
@@ -17,7 +19,7 @@
 
     <!--Replace the div below with your content-->
     <div id="newUser">
-        <form name="newUser_form" id="newUser_form" method="POST" action="processNewUser.php" onsubmit="event.preventDefault(); newFunction();"> 
+        <form name="newUser_form" id="newUser_form" method="POST" action="processNewUser.php" onsubmit="event.preventDefault(); checkSame();"> <!--  -->
             <fieldset id="newUser_section">
                 <legend><b>Create a New Account</b></legend>
                 <label for="username">Username:</label>
@@ -25,10 +27,19 @@
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required><br>
                 <label for="passwrd">Password:</label>
-                <input type="password" id="passwrd" name="passwrd" placeholder="At least 6 characters" pattern=".{6,}" title="6 or more characters" required><br>
+                <input type="password" onchange="checkLength(this,6)" id="passwrd" name="passwrd" placeholder="At least 6 characters" pattern=".{6,}" title="6 or more characters" required><br>
                 <label for="confirmPasswrd">Confirm Password:</label>
-                <input type="password" id="confirmPasswrd" name="confirmPasswrd" placeholder="Re-enter password" pattern=".{6,}" title="6 or more characters" required><br>
-                <input type="submit" value="Sign Up" id="newUser_submit"><br>
+                <input type="password" onchange="checkLength(this,6)" id="confirmPasswrd" name="confirmPasswrd" placeholder="Re-enter password" pattern=".{6,}" title="6 or more characters" required><br>
+                <!-- <p id="error">Welcome!</p> -->
+                <input type="submit" value="Sign Up" id="newUser_submit" ><br>
+
+
+                <!-- <input type="text" onchange="checkLength(this,3)" name="subject" id="subject" required><br> -->
+
+
+                <!-- <script>
+                    document.getElementById("error").innerHTML = newFunction();
+                </script> -->
             </fieldset>
         </form>
     </div>
