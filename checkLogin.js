@@ -11,4 +11,10 @@ var checkLength = function(element, length){
     }else{
         element.setCustomValidity("");
     }
+    //clears the submit button error
+    document.querySelector('input[type="submit"]').setCustomValidity("");
+}
+
+var clearError = function(element){
+    element.setCustomValidity("")
 }

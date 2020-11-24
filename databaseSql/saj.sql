@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `carts` (
-  `cartID` int(11) NOT NULL,
   `cartCustomerID` int(11) NOT NULL,
   `cartProductID` int(11) NOT NULL,
   `cartProductQuantity` int(11) NOT NULL
@@ -38,8 +37,8 @@ CREATE TABLE `carts` (
 -- Dumping data for table `carts`
 --
 
-INSERT INTO `carts` (`cartID`, `cartCustomerID`, `cartProductID`, `cartProductQuantity`) VALUES
-(1, 1, 2, 1);
+-- INSERT INTO `carts` (`cartCustomerID`, `cartProductID`, `cartProductQuantity`) VALUES
+-- (1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -94,8 +93,8 @@ INSERT INTO `customers` (`customerID`, `customerUserName`, `customeremail`, `cus
 CREATE TABLE `orders` (
   `orderID` int(11) NOT NULL,
   `customerID` int(11) NOT NULL,
-  `orderProductID` int(11) NOT NULL,
-  `orderDate` date NOT NULL
+  `orderDate` date NOT NULL,
+  `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -112,6 +111,20 @@ CREATE TABLE `products` (
   `listPrice` decimal(10,2) NOT NULL,
   `productImageURL` varchar(255) NOT NULL,
   `productDescription` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- -- Table structure for table `orderProducts'
+--
+
+
+CREATE TABLE `orderProducts` (
+  `orderID` int(11) NOT NULL,
+  `productID` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+   PRIMARY KEY (`orderID`, `productID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -151,8 +164,7 @@ INSERT INTO `products` (`productID`, `categoryID`, `productCode`, `productName`,
 -- Indexes for table `carts`
 --
 ALTER TABLE `carts`
-  ADD PRIMARY KEY (`cartID`),
-  ADD KEY `cartCustomerID` (`cartCustomerID`);
+  ADD PRIMARY KEY (`cartCustomerID`, `cartProductID`);
 
 --
 -- Indexes for table `categories`
@@ -164,8 +176,10 @@ ALTER TABLE `categories`
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
-  ADD PRIMARY KEY (`customerID`),
-  ADD UNIQUE KEY `customerUserName` (`customerUserName`);
+  ADD PRIMARY KEY (`customerID`);
+
+ALTER TABLE `customers`
+  ADD UNIQUE (`customerUserName`);
 
 --
 -- Indexes for table `orders`
@@ -177,18 +191,14 @@ ALTER TABLE `orders`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`productID`),
-  ADD UNIQUE KEY `productCode` (`productCode`);
+  ADD PRIMARY KEY (`productID`);
+
+ALTER TABLE `products`
+  ADD UNIQUE (`productCode`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `carts`
---
-ALTER TABLE `carts`
-  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -223,6 +233,25 @@ ALTER TABLE `products`
 --
 ALTER TABLE `carts`
   ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`cartCustomerID`) REFERENCES `customers` (`customerID`);
+
+ALTER TABLE `carts`
+  ADD CONSTRAINT `carts_ibfk_2` FOREIGN KEY (`cartProductID`) REFERENCES `products` (`productID`);
+
+--
+-- Constraints for table `orderProducts`
+--
+ALTER TABLE `orderProducts`
+  ADD CONSTRAINT fk_order FOREIGN KEY (`orderID`) REFERENCES orders(`orderID`);
+
+ALTER TABLE `orderProducts`
+  ADD CONSTRAINT fk_product FOREIGN KEY (`productID`) REFERENCES products(`productID`);
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT fk_customer FOREIGN KEY (`customerID`) REFERENCES customers(`customerID`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
