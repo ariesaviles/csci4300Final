@@ -11,51 +11,51 @@ Download code and import the database (saj.sql). You may need to create a databa
 
 # Contribution Summary
 Shantisa:
-        Website Setup and design
-        All images designs for website (8)
-        addProduct.php
-        checkLogin.js
-        construction.html
-        contact.php
-        dropdown_arrow.php
-        footer.php
-        header.php
-        home.php
-        login.php
-        logout.php
-        main.css
-        product.php
-        removeProduct.php
-        search.php
-        shoppingCart.php
+       *  Website Setup and design
+       *  All images designs for website (8)
+       *  addProduct.php
+       *  checkLogin.js
+       *  construction.html
+       *  contact.php
+       *  dropdown_arrow.php
+       *  footer.php
+       *  header.php
+       *  home.php
+       *  login.php
+       *  logout.php
+       *  main.css
+       *  product.php
+       *  removeProduct.php
+       *  search.php
+       *  shoppingCart.php
 
 
 Aries:
-        Website Setup and design
-        Github setup
-        addToCart.php
-        checkout.php
-        main.css
-        processPayment.php
-        product.php
-        removeFromCart.php
-        shoppingCart.php
+       *  Website Setup and design
+       *  Github setup
+       *  addToCart.php
+       *  checkout.php
+       *  main.css
+       *  processPayment.php
+       *  product.php
+       *  removeFromCart.php
+       *  shoppingCart.php
 
 
 Jorrin:
-        Database Design
-        addToCart.php
-        database.php
-        databaseError.php
-        home.php
-        main.css
-        newUser.php
-        passwordMatch.php
-        processNewUser.php
-        product.php
-        removeFromCart.php
-        removeProduct.php
-        search.php
-        shoppingCart.php
+       *  Database Design
+       *  addToCart.php
+       *  database.php
+       *  databaseError.php
+       *  home.php
+       *  main.css
+       *  newUser.php
+       *  passwordMatch.php
+       *  processNewUser.php
+       *  product.php
+       *  removeFromCart.php
+       *  removeProduct.php
+       *  search.php
+       *  shoppingCart.php
 
 
