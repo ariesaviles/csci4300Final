@@ -10,7 +10,7 @@ Jorrin Thacker
 Download code and import the database (saj.sql). You may need to create a database named "saj" and then import if there are any issue when importing. After the database is imported, navigate to "home.php" to access the home page. 
 
 # Contribution Summary
-** Shantisa: **
+Shantisa:
 * Website Setup and design
 * All images designs for website (8)
 * addProduct.php
@@ -30,7 +30,7 @@ Download code and import the database (saj.sql). You may need to create a databa
 * shoppingCart.php
 
 
-** Aries: **
+Aries:
 * Website Setup and design
 * Github setup
 * addToCart.php
@@ -42,7 +42,7 @@ Download code and import the database (saj.sql). You may need to create a databa
 * shoppingCart.php
 
 
-** Jorrin: **
+Jorrin:
 * Database Design
 * addToCart.php
 * database.php
