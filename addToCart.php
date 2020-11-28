@@ -13,7 +13,7 @@ if ($_SESSION['user'] <= 0) {
 } // if
 
 $productID = $_POST['product_id']; // dependent on the product.php form
-echo $productID;
+//echo $productID;
 $quantity = filter_input(INPUT_POST, 'itemqty'); // dependent on the product.php form
 
 //$cartID = 1;
@@ -22,7 +22,7 @@ $quantity = filter_input(INPUT_POST, 'itemqty'); // dependent on the product.php
 $customerID = $_SESSION['user'];
 
 $_SESSION['cartID'] = $_SESSION['user'];
-echo $_SESSION['cartID'];
+//echo $_SESSION['cartID'];
 
 if ($productID == null || $quantity == null || $customerID == null) {
   // error message goes hereecho
@@ -39,7 +39,7 @@ if ($productID == null || $quantity == null || $customerID == null) {
       //update the existing cart with new quantitu
       $oldCount = $item->fetch()['cartProductQuantity'];
       $count = $oldCount + $quantity;
-      $query = "UPDATE carts SET cartProductQuantity = '$count' WHERE 
+      $query = "UPDATE carts SET cartProductQuantity = '$count' WHERE
                 cartCustomerID = '$customerID' AND cartProductID = '$productID'";
       $db->prepare($query)->execute();
   }else{
@@ -56,7 +56,7 @@ if ($productID == null || $quantity == null || $customerID == null) {
       $insert->closeCursor();
   }
 
-  // header will take the user to the cart page 
+  // header will take the user to the cart page
   header("Location: shoppingCart.php");
    // include('shoppingCart.php');
 

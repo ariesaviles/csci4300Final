@@ -4,9 +4,23 @@ include('database.php');
 
 session_start();
 $user = $_SESSION['user'];
+// adds to order database
+$date = date("Y-m-d");
+echo $date;
+$q2 = "INSERT INTO orders (customerID, orderProductID, orderDate)
+        SELECT carts.cartCustomerID, carts.cartProductID, '$date'
+        FROM carts
+        WHERE carts.cartCustomerID = $user";
+$insert = $db->query($q2);
+// update date
+
+
+
 // delete entries from cart database
 $q1 = "DELETE FROM carts WHERE cartCustomerID = $user";
 $cartProducts = $db->query($q1);
+
+
 
 
 ?>
