@@ -52,13 +52,13 @@ $_SESSION['user'];
             <legend>Shipping Information</legend>
             <div id="in">
             <label for="">Address 1</label>
-            <input type="text" name="Address1" value="200 D.W. Brooks Dr" required>
+            <input type="text" name="Address1" placeholder="200 D.W. Brooks Dr" required>
             <label for="">Address 2</label>
-            <input type="text" name="Address2" value="(optional)">
+            <input type="text" name="Address2" placeholder="(optional)">
             <label for="">City</label>
-            <input type="text" name="City" value="Athens" required>
+            <input type="text" name="City" placeholder="Athens" required>
             <label for="">State</label>
-            <input type="text" name="State" value="GA" required>
+            <input type="text" name="State" placeholder="GA" required>
           </div>
           </fieldset>
 
@@ -66,14 +66,14 @@ $_SESSION['user'];
             <legend>Payment Information</legend>
             <div id="in1">
             <label for="creditCard">Card Num.</label>
-	           <input type="text" name="creditCard" id="creditCard" value="1111 2222 3333 4444"required>
+	           <input type="text" name="creditCard" id="creditCard" placeholder="1111 2222 3333 4444"required>
              <label for="cvv">Sec. Code</label>
-             <input type="text" name="cvv" id="cvv" value="555">
+             <input type="text" name="cvv" id="cvv" placeholder="555">
              <label for="Expiration">Exp. </label>
              <div id="stop">
-             <input class="exp" type="text" name="exp-month" id="exp-month" value="02" size="2">
+             <input class="exp" type="text" name="exp-month" id="exp-month" placeholder="02" size="2">
              <span> / </span>
-             <input class="exp" type="text" name="exp-year" id="exp-year" value="2020" size="4">
+             <input class="exp" type="text" name="exp-year" id="exp-year" placeholder="2020" size="4">
            </div>
            </div>
           </fieldset>
@@ -82,7 +82,7 @@ $_SESSION['user'];
             <legend>Contact Information</legend>
             <div id="in2">
             <label for="">Email</label>
-            <input type="text" name="Email" value="customer@sajmarketplace.com">
+            <input type="text" name="Email" placeholder="customer@sajmarketplace.com">
           </div>
           </fieldset>
 
