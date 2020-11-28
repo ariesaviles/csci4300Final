@@ -5,7 +5,7 @@ include('database.php');
 // get the info the user entered in the 
 $username = $_POST['username'];
 $email = $_POST['email'];
-$password = $_POST['passwrd'];
+$password = $_POST['password'];
 $date = date("Ymd");
 $userExists = FALSE;
 

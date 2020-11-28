@@ -50,7 +50,7 @@
                     <label for="password">Password:</label>
                     <input type="password" onchange="checkLength(this,6)" name="password" id="password" required><br>
                     <input type="submit" value="Login" id="login_submit"><br>
-                    <?php if($error){echo "<p class='login_fail'><b>Login Failed</b></p>";}?>
+                    <?php if($error){echo "<p class='login_fail'><b>Your password and email do not match. Please try again</b></p>";}?>
                     <a href="newUser.php" id="contact_link">Are you a new user?</a>
                 </fieldset>
             </form>

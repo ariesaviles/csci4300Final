@@ -3,7 +3,6 @@
 include('database.php');
 if (!isset($_SESSION)) {
   session_start();
-  // header("Location: cartError.php");
 }
     // gets the total price from the cart as a post
     $total_price= 0;
@@ -17,7 +16,6 @@ if ($_SESSION['user'] <= 0) {
 } // if
 
 
-//if (isset($_SESSION['cartID'])) {
 $_SESSION['user'];
 
 ?>

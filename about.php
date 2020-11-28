@@ -21,10 +21,10 @@
             <img src="MandKImg.jpg" id="stockImg" alt="Stock Image">
             <p>In 2019, we started SAJ to provide quality computer accessories at a price customers could afford with top notch service.
                 One year later, we are still determined to deliver the best online shopping experience we can.
-                All of the products we sell go through a rigorous testing phase before we decide to sell it under out name. 
+                All of the products we sell go through a rigorous testing phase before we decide to sell it under our name.
                 We believe technology is the future and want to provide the best products for our customers to use. 
                 We take great pride in our company and the products we sell.
-                Although we have seen a substantial growth in business, our commitment remains the same: creating the excellent products with excellent service.
+                Although we have seen a substantial growth in business, our commitment remains the same: creating excellent products with excellent service.
                 We aim to give them the best experience we can, offering free returns or exchanges, and the best customer service representatives in the industry. </p>
             <h4>COVID-19 Update</h4>
             <p>With the unfortunate development of COVID-19, we made the choice to switch to fully online and close our physical branches.

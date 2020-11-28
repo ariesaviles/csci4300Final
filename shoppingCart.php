@@ -13,18 +13,12 @@ if ($_SESSION['user'] <= 0) {
 } // if
 
 
-//if (isset($_SESSION['cartID'])) {
 $user = $_SESSION['user'];
 $q1 = "SELECT customerUserName FROM customers WHERE customerID = $user ";
 if (isset($q1)) {
   $name = $db->query($q1)->fetch()['customerUserName'];
 } else {
 }
-//} else if (isset($_SESSION['user'])) {
-//$user = $_SESSION['user'];
-//}
-//$q1 = "SELECT cartProductID FROM carts WHERE cartCustomerID = 3";
-//$cartProducts = $db->query($q1) // the product IDs in the user's cart
 
 $q2 = "SELECT * FROM products INNER JOIN carts
         ON products.productID = carts.cartProductID

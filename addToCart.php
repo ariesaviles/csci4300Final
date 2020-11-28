@@ -4,7 +4,6 @@
 
 if (!isset($_SESSION)) {
   session_start();
-  // header("Location: cartError.php");
 }
 
 // if the user is not logged in, redirect them to the login page.
@@ -13,16 +12,11 @@ if ($_SESSION['user'] <= 0) {
 } // if
 
 $productID = $_POST['product_id']; // dependent on the product.php form
-//echo $productID;
-$quantity = filter_input(INPUT_POST, 'itemqty'); // dependent on the product.php form
 
-//$cartID = 1;
-//echo $cartID;
+$quantity = filter_input(INPUT_POST, 'itemqty'); // dependent on the product.php form
 
 $customerID = $_SESSION['user'];
 
-$_SESSION['cartID'] = $_SESSION['user'];
-//echo $_SESSION['cartID'];
 
 if ($productID == null || $quantity == null || $customerID == null) {
   // error message goes hereecho
@@ -48,7 +42,6 @@ if ($productID == null || $quantity == null || $customerID == null) {
           VALUES(:customerID, :cartProductID, :quantity)';
 
       $insert = $db->prepare($query);
-      //$insert->bindValue(':cartID', $cartID);
       $insert->bindValue(':customerID', $customerID);
       $insert->bindValue(':cartProductID', $productID);
       $insert->bindValue(':quantity', $quantity);

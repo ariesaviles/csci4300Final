@@ -2,25 +2,47 @@
 
 include('database.php');
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+// if the user is not logged in, redirect them to the login page.
+if ($_SESSION['user'] <= 0) {
+    header("Location: cartError.php");
+}//if
+
 $user = $_SESSION['user'];
-// adds to order database
-$date = date("Y-m-d");
-//echo $date;
-$q2 = "INSERT INTO orders (customerID, orderProductID, orderDate)
-        SELECT carts.cartCustomerID, carts.cartProductID, '$date'
-        FROM carts
-        WHERE carts.cartCustomerID = $user";
-$insert = $db->query($q2);
-// update date
 
+$q2 = "SELECT * FROM carts WHERE cartCustomerID = '$user'";
+$cartProducts = $db->query($q2);
 
+if(isset($_POST['Address1'], $_POST['City'],$_POST['State'] )){
 
-// delete entries from cart database
-$q1 = "DELETE FROM carts WHERE cartCustomerID = $user";
-$cartProducts = $db->query($q1);
+    $address = $_POST['Address1']." ".$_POST['Address2']." ".$_POST['City'].",".$_POST['State'];
 
+    $date = date("Y-m-d");
 
+    // adds to order database
+    $query = "INSERT INTO orders (customerID, orderDate, address)
+        VALUES ('$user','$date','$address')";
+
+    if($db->exec($query) == TRUE){
+        $orderID = $db->lastInsertId();
+
+        foreach ($cartProducts as $cart) {
+            $productID = $cart["cartProductID"];
+            $quantity = $cart["cartProductQuantity"];
+
+            $query = "INSERT INTO orderProducts (orderID, productID, quantity)
+                VALUES ('$orderID', '$productID', '$quantity')";
+            $db->exec($query);
+        }
+
+        // delete entries from cart database
+        $q1 = "DELETE FROM carts WHERE cartCustomerID = $user";
+        $cartProducts = $db->query($q1);
+    }
+}
 
 
 ?>
