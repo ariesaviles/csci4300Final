@@ -6,7 +6,7 @@ session_start();
 $user = $_SESSION['user'];
 // adds to order database
 $date = date("Y-m-d");
-echo $date;
+//echo $date;
 $q2 = "INSERT INTO orders (customerID, orderProductID, orderDate)
         SELECT carts.cartCustomerID, carts.cartProductID, '$date'
         FROM carts
