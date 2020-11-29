@@ -10,7 +10,7 @@ $date = date("Ymd");
 $userExists = FALSE;
 
 // query to see if this email already exitsts in the database
-$query = "SELECT * FROM `customers` WHERE customeremail = '$email'";
+$query = "SELECT * FROM `customers` WHERE customeremail = '$email' OR customerUserName = '$username'";
 $userCheck = $db->query($query);
 
 // Check if the query returned rows and if so, the user already exists.

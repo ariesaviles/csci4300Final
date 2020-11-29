@@ -82,7 +82,7 @@ $_SESSION['user'];
             <legend>Contact Information</legend>
             <div id="in2">
             <label for="">Email</label>
-            <input type="text" name="Email" placeholder="customer@sajmarketplace.com">
+            <input type="email" name="Email" placeholder="customer@sajmarketplace.com">
           </div>
           </fieldset>
 

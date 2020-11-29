@@ -22,7 +22,7 @@ if (isset($q1)) {
 
 $q2 = "SELECT * FROM products INNER JOIN carts
         ON products.productID = carts.cartProductID
-        WHERE productID IN (SELECT cartProductID FROM carts WHERE cartCustomerID = '$user')";
+        WHERE carts.cartCustomerID  = '$user'";
 $cartProducts = $db->query($q2)
 
 ?>
