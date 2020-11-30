@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2020 at 11:55 PM
+-- Generation Time: Nov 30, 2020 at 09:27 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.23
 
@@ -32,13 +32,6 @@ CREATE TABLE `carts` (
   `cartProductID` int(11) NOT NULL,
   `cartProductQuantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `carts`
---
-
--- INSERT INTO `carts` (`cartCustomerID`, `cartProductID`, `cartProductQuantity`) VALUES
--- (1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +75,35 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`customerID`, `customerUserName`, `customeremail`, `customerPassword`, `customerCreationDate`) VALUES
 (1, 'Jorrin', 'jorrin@gmail.com', 'password', '2020-11-14'),
 (2, 'Shantisa', 'shantisa@gmail.com', 'password2', '2020-11-14'),
-(3, 'Aries', 'aries@gmail.com', '123456789', '2020-11-14');
+(3, 'Aries', 'aries@gmail.com', '123456789', '2020-11-14'),
+(4, 'guest', 'guest@gmail.com', '123456', '2020-11-30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderproducts`
+--
+
+CREATE TABLE `orderproducts` (
+  `orderID` int(11) NOT NULL,
+  `productID` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orderproducts`
+--
+
+INSERT INTO `orderproducts` (`orderID`, `productID`, `quantity`) VALUES
+(8, 2, 1),
+(8, 9, 2),
+(8, 14, 3),
+(8, 21, 1),
+(10, 5, 1),
+(10, 7, 6),
+(11, 2, 1),
+(11, 4, 10),
+(11, 23, 2);
 
 -- --------------------------------------------------------
 
@@ -94,8 +115,18 @@ CREATE TABLE `orders` (
   `orderID` int(11) NOT NULL,
   `customerID` int(11) NOT NULL,
   `orderDate` date NOT NULL,
-  `address` varchar(255) NOT NULL
+  `address` varchar(255) NOT NULL,
+  `totalPrice` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderID`, `customerID`, `orderDate`, `address`, `totalPrice`) VALUES
+(8, 1, '2020-11-30', '1200 drive ave. Athens, Georgia', '1718.91'),
+(10, 1, '2020-11-30', '123 street road  Athens, Georgia', '553.69'),
+(11, 1, '2020-11-30', '444 fourty four drive  athens, GA', '1100.87');
 
 -- --------------------------------------------------------
 
@@ -111,20 +142,6 @@ CREATE TABLE `products` (
   `listPrice` decimal(10,2) NOT NULL,
   `productImageURL` varchar(255) NOT NULL,
   `productDescription` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- -- Table structure for table `orderProducts'
---
-
-
-CREATE TABLE `orderProducts` (
-  `orderID` int(11) NOT NULL,
-  `productID` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-   PRIMARY KEY (`orderID`, `productID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -164,7 +181,8 @@ INSERT INTO `products` (`productID`, `categoryID`, `productCode`, `productName`,
 -- Indexes for table `carts`
 --
 ALTER TABLE `carts`
-  ADD PRIMARY KEY (`cartCustomerID`, `cartProductID`);
+  ADD PRIMARY KEY (`cartCustomerID`,`cartProductID`),
+  ADD KEY `carts_ibfk_2` (`cartProductID`);
 
 --
 -- Indexes for table `categories`
@@ -176,25 +194,29 @@ ALTER TABLE `categories`
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
-  ADD PRIMARY KEY (`customerID`);
+  ADD PRIMARY KEY (`customerID`),
+  ADD UNIQUE KEY `customerUserName` (`customerUserName`);
 
-ALTER TABLE `customers`
-  ADD UNIQUE (`customerUserName`);
+--
+-- Indexes for table `orderproducts`
+--
+ALTER TABLE `orderproducts`
+  ADD PRIMARY KEY (`orderID`,`productID`),
+  ADD KEY `fk_product` (`productID`);
 
 --
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`orderID`);
+  ADD PRIMARY KEY (`orderID`),
+  ADD KEY `fk_customer` (`customerID`);
 
 --
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`productID`);
-
-ALTER TABLE `products`
-  ADD UNIQUE (`productCode`);
+  ADD PRIMARY KEY (`productID`),
+  ADD UNIQUE KEY `productCode` (`productCode`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -210,19 +232,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
@@ -232,26 +254,21 @@ ALTER TABLE `products`
 -- Constraints for table `carts`
 --
 ALTER TABLE `carts`
-  ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`cartCustomerID`) REFERENCES `customers` (`customerID`);
-
-ALTER TABLE `carts`
+  ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`cartCustomerID`) REFERENCES `customers` (`customerID`),
   ADD CONSTRAINT `carts_ibfk_2` FOREIGN KEY (`cartProductID`) REFERENCES `products` (`productID`);
 
 --
--- Constraints for table `orderProducts`
+-- Constraints for table `orderproducts`
 --
-ALTER TABLE `orderProducts`
-  ADD CONSTRAINT fk_order FOREIGN KEY (`orderID`) REFERENCES orders(`orderID`);
-
-ALTER TABLE `orderProducts`
-  ADD CONSTRAINT fk_product FOREIGN KEY (`productID`) REFERENCES products(`productID`);
+ALTER TABLE `orderproducts`
+  ADD CONSTRAINT `fk_order` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`),
+  ADD CONSTRAINT `fk_product` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`);
 
 --
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT fk_customer FOREIGN KEY (`customerID`) REFERENCES customers(`customerID`);
-
+  ADD CONSTRAINT `fk_customer` FOREIGN KEY (`customerID`) REFERENCES `customers` (`customerID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

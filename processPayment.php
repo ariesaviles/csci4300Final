@@ -9,24 +9,26 @@ if (!isset($_SESSION)) {
 // if the user is not logged in, redirect them to the login page.
 if ($_SESSION['user'] <= 0) {
     header("Location: cartError.php");
-}//if
+} //if
 
 $user = $_SESSION['user'];
 
 $q2 = "SELECT * FROM carts WHERE cartCustomerID = '$user'";
 $cartProducts = $db->query($q2);
 
-if(isset($_POST['Address1'], $_POST['City'],$_POST['State'] )){
+if (isset($_POST['Address1'], $_POST['City'], $_POST['State'], $_POST['total'])) {
 
-    $address = $_POST['Address1']." ".$_POST['Address2']." ".$_POST['City'].",".$_POST['State'];
+    $address = $_POST['Address1'] . " " . $_POST['Address2'] . " " . $_POST['City'] . ", " . $_POST['State'];
 
     $date = date("Y-m-d");
 
-    // adds to order database
-    $query = "INSERT INTO orders (customerID, orderDate, address)
-        VALUES ('$user','$date','$address')";
+    $total = $_POST['total'];
 
-    if($db->exec($query) == TRUE){
+    // adds to order database
+    $query = "INSERT INTO orders (customerID, orderDate, address, totalPrice)
+        VALUES ('$user','$date','$address', '$total')";
+
+    if ($db->exec($query) == TRUE) {
         $orderID = $db->lastInsertId();
 
         foreach ($cartProducts as $cart) {
@@ -62,8 +64,8 @@ if(isset($_POST['Address1'], $_POST['City'],$_POST['State'] )){
     <?php include('header.php'); ?>
     <div id="processNewUser">
         <fieldset>
-                <meta http-equiv="refresh" content="5;home.php" />
-                <h3 id="paymentText"> Payment has been processed! <br><br> Products will be shipped to: <br> <?php echo $_POST['Address1'] ?> <br> <?php echo $_POST['City'] ?>, <?php echo $_POST['State'] ?> <br><br> Returning to home page... </h3>
+            <meta http-equiv="refresh" content="5;home.php" />
+            <h3 id="paymentText"> Payment has been processed! <br><br> Products will be shipped to: <br> <?php echo $_POST['Address1'] ?> <br> <?php echo $_POST['City'] ?>, <?php echo $_POST['State'] ?> <br><br> Returning to home page... </h3>
         </fieldset>
     </div>
     <?php include('footer.php'); ?>

@@ -516,6 +516,55 @@ strong #total {
     margin-top: 10px;
 }
 
+/* Account */
+
+.account {
+    text-align: center;
+}
+.account .zoom {
+    padding: 1em;
+    background: royalblue;
+    transition: transform .2s;
+    width: 20%;
+    margin: 0 auto;
+}
+.account .zoom:hover {
+    -ms-transform: scale(1.2);
+    /* IE 9 */
+    -webkit-transform: scale(1.2);
+    /* Safari 3-8 */
+    transform: scale(1.2);
+}
+.account .zoom a, a:visited, a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Orders */
+
+.orders {
+    margin-bottom: 70px;
+}
+.orders fieldset {
+    border-color: RoyalBlue;
+    border-style: solid;
+    width: 800px;
+    margin: auto;
+    margin-top: 70px;
+}
+.orders fieldset legend {
+    font-size: 120%;
+    padding-bottom: 10px;
+    color: RoyalBlue;
+}
+.orders fieldset p {
+    text-align: left;
+    margin-left: 4em;
+}
+.orders #quantity {
+    text-align: center;
+}
+
 /* footer */
 
 #copy {

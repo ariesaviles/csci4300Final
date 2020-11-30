@@ -1,8 +1,7 @@
 <?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <div id="header_style">
@@ -25,11 +24,14 @@
                 </ul>
             </li>
             <li><a href="shoppingCart.php"><img src="shopping_cart.svg" alt="Shopping cart"><b>Cart</b></a></li>
-            <?php if(isset($_SESSION['user'])){
-                echo "<li><a href='logout.php'><img src='logout.svg' alt='Profile'><b>Logout</b></a></li>";
-            } else{
+
+            <?php if (isset($_SESSION['user'])) {
+                echo "<li><a href='account.php'><b>Account</b><img src='dropdown_arrow.svg' alt='Dropdown'></a><ul>" .
+                    "<li><a href='orders.php'><b>Orders</b></a></li>" . 
+                    "<li><a href='logout.php'><img src='logout.svg' alt='Profile'><b>Logout</b></a></li></ul></li>";
+            } else {
                 echo "<li><a href='login.php'><img src='login.svg' alt='Profile'><b>Login</b></a></li>";
-            }?>
+            } ?>
             <li><a href="about.php"><b>About</b><img src="dropdown_arrow.svg" alt="Dropdown"></a>
                 <ul>
                     <li><a href="contact.php"><b>Contact Us</b></a></li>
