@@ -44,12 +44,14 @@ Aries:
 
 Jorrin:
 * Database Design
+* account.php
 * addToCart.php
 * database.php
 * databaseError.php
 * home.php
 * main.css
 * newUser.php
+* orders.php
 * passwordMatch.php
 * processNewUser.php
 * product.php
