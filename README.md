@@ -12,18 +12,20 @@ Download code and import the database (saj.sql). You may need to create a databa
 ## Contribution Summary
 Shantisa:
 * Website Setup and design
+* Database Design
 * All images designs for website (8)
 * addProduct.php
+* addToCart.php
 * checkLogin.js
-* construction.html
+* checkout.php
 * contact.php
-* dropdown_arrow.php
 * footer.php
 * header.php
 * home.php
 * login.php
 * logout.php
 * main.css
+* processPayment.php
 * product.php
 * removeProduct.php
 * search.php
@@ -44,6 +46,7 @@ Aries:
 
 Jorrin:
 * Database Design
+* about.php
 * account.php
 * addToCart.php
 * database.php
