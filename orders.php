@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 
 // get the orderIDs associated with the userID
 $userID = $_SESSION['user'];
-$q1 = "SELECT * FROM orders WHERE customerID = '$userID'";
+$q1 = "SELECT * FROM orders WHERE customerID = '$userID' ORDER BY orderID DESC";
 $orders = $db->query($q1);
 
 ?>
