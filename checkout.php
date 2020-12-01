@@ -31,6 +31,8 @@ $_SESSION['user'];
   <title> SAJ</title>
   <link rel="stylesheet" href="main.css">
   <link rel="shortcut icon" href="favicon.ico">
+  <script src="checkLogin.js"></script>
+
 </head>
 
 <body>
@@ -68,12 +70,12 @@ $_SESSION['user'];
           <label for="creditCard">Card Num.</label>
           <input type="text" name="creditCard" id="creditCard" placeholder="1111 2222 3333 4444" required>
           <label for="cvv">Sec. Code</label>
-          <input type="text" name="cvv" id="cvv" placeholder="555">
+          <input type="text" name="cvv" id="cvv" placeholder="555" required>
           <label for="Expiration">Exp. </label>
           <div id="stop">
-            <input class="exp" type="text" name="exp-month" id="exp-month" placeholder="02" size="2">
+            <input class="exp" type="number" name="exp-month" id="exp-month" placeholder="02" size="2" min="1" max="12"required>
             <span> / </span>
-            <input class="exp" type="text" name="exp-year" id="exp-year" placeholder="2020" size="4">
+            <input class="exp" type="number" name="exp-year" id="exp-year" placeholder="2020" size="4" min="2000" max="3000" required>
           </div>
         </div>
       </fieldset>
@@ -82,7 +84,7 @@ $_SESSION['user'];
         <legend>Contact Information</legend>
         <div id="in2">
           <label for="">Email</label>
-          <input type="email" name="Email" placeholder="customer@sajmarketplace.com">
+          <input type="email" name="Email" placeholder="customer@sajmarketplace.com" required>
         </div>
       </fieldset>
 

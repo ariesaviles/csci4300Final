@@ -23,7 +23,14 @@ if (isset($q1)) {
 $q2 = "SELECT * FROM products INNER JOIN carts
         ON products.productID = carts.cartProductID
         WHERE carts.cartCustomerID  = '$user'";
-$cartProducts = $db->query($q2)
+$cartProducts = $db->query($q2);
+
+$isEmpty;
+if ($cartProducts->rowCount() != 0) {
+  $isEmpty = false;
+} else {
+  $isEmpty = true;
+} // if-else
 
 ?>
 
@@ -133,12 +140,20 @@ $cartProducts = $db->query($q2)
           }
 ?>
 </div>
+
 <div id="checkoutButton">
   <form action="checkout.php" method="post">
-    <input type="submit" name="" value="Proceed to Checkout">
-      <input type="hidden" name="total" <?php echo "value='$total_price'" ?>>
+    <?php if ($isEmpty == false) { ?>
+      <input type="submit" name="" value="Proceed to Checkout">
+    <?php } else { ?>
+      <input type="submit" name="" value="Proceed to Checkout" disabled>
+    <?php } ?>
+    <input type="hidden" name="total" <?php echo "value='$total_price'" ?>>
   </form>
+
 </div>
+
+
 </main>
 
 <div id="footer">

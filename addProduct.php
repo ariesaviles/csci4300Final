@@ -28,6 +28,7 @@
         <meta charset="UTF-8">
         <title> SAJ</title>
         <link rel="stylesheet" href="main.css">
+        <script src="checkLogin.js"></script>
         <link rel="shortcut icon" href="favicon.ico">
     </head>
     <body>
@@ -55,7 +56,7 @@
                 <label>Image URL:</label>
                 <input type="url" name="url" required><br>
                 <p>Describe:</p>
-                <textarea name="description" id="description" placeholder="Enter your description..."></textarea>
+                <textarea name="description" id="description" placeholder="Enter your description..." onchange="checkLength(this,10)"></textarea>
                 <input type="submit" value="Add Product" id="contact_submit">
             </fieldset>
         </form>

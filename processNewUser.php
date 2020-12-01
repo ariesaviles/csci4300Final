@@ -45,7 +45,7 @@ if ($userExists == FALSE) {
         <fieldset>
             <?php if ($userExists == TRUE) { ?>
                 <meta http-equiv="refresh" content="2;newUser.php" />
-                <h3> Error: User already Exists. Redirecting to login page... </h3>
+                <h3> Error: User already Exists. Please try again... </h3>
             <?php } else { ?>
                 <meta http-equiv="refresh" content="2;login.php" />
                 <h3> Account Creation Successful! Redirecting to login page... </h3>

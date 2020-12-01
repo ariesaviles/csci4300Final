@@ -47,7 +47,6 @@ $orders = $db->query($q1);
                 <table>
                     <tr>
                         <th>Product</th>
-                        <th>Code</th>
                         <th id="col_name">Name</th>
                         <th id="col_quantity">Quantity</th>
                         <th>Price</th>
@@ -78,7 +77,6 @@ $orders = $db->query($q1);
                                         <img src='<?php echo $product['productImageURL'] ?>' id="cartImage" alt='Item' />
                                     </div>
                                 </td>
-                                <td><?php echo $product['productCode'] ?></td>
                                 <td><?php echo $product['productName'] ?></td>
                                 <td id="quantity"><?php echo $quantity; ?></td>
                                 <td>$<?php echo $finalPrice ?></td>
